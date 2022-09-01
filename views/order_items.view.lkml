@@ -69,4 +69,25 @@ view: order_items {
     type: count
     drill_fields: [id, orders.id, inventory_items.id]
   }
+
+  measure: test1 {
+    type: number
+    sql:  ${TABLE}.sale_price ;;
+    value_format_name: decimal_0
+    html: {{rendered_value}}
+      <ul>
+      <li> {{rendered_value}} </li>
+      </ul>;;
+  }
+
+  measure: test2 {
+    type: number
+    sql:  ${TABLE}.sale_price ;;
+    value_format_name: decimal_0
+    html:
+      <ul>
+      <li> {{rendered_value}} </li>
+      </ul>;;
+  }
+
 }
